@@ -5,7 +5,7 @@ module.exports = {
 	context: join(__dirname, 'src/public'),
 
 	entry: {
-		main: './index.tsx'
+		main: ['./style.scss', './index.tsx']
 	},
 
 	output: {
@@ -40,6 +40,10 @@ module.exports = {
 						}
 					}
 				]
+			},
+			{
+				test: /\.scss$/,
+				use: ['style-loader', 'css-loader', 'sass-loader']
 			}
 		]
 	},

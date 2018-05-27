@@ -4,6 +4,14 @@
     "react"
   ],
   "plugins": [
+    "transform-object-rest-spread",
+    "transform-react-constant-elements",
+    [
+      "emotion",
+      {
+        "hoist": true
+      }
+    ],
     [
       "transform-runtime",
       {
@@ -15,7 +23,7 @@
     [
       "transform-react-jsx",
       {
-        "pragma": "require('preact').h"
+        "pragma": "require('react').createElement"
       }
     ]
   ]
