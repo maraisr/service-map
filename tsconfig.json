@@ -1,0 +1,22 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"outDir": "dist/",
+		"alwaysStrict": true,
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noImplicitAny": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"lib": ["dom", "esnext"],
+		"noEmitOnError": false,
+		"jsx": "preserve"
+	},
+	"include": ["src/public/**/*"],
+	"exclude": [".git"]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "service-map",
+  "author": "Marais Rossouw <me@maraisr.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist/; concurrently -k 'yarn run build:public'",
+    "build:public": "webpack --mode production",
+    "lint": "prettier --find-config-path --write '{*,src/**/*}.+(ts|tsx|js|json|scss)'",
+    "serve": "concurrently -k 'yarn run serve:api' 'yarn run serve:public'",
+    "serve:api": "node src/api/server.js",
+    "serve:public": "webpack-dev-server --port 8081 --mode development"
+  },
+  "devDependencies": {
+    "@types/node": "^10.1.2",
+    "awesome-typescript-loader": "^5.0.0",
+    "babel-env": "^2.4.1",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
+    "concurrently": "^3.5.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.12.1",
+    "rimraf": "^2.6.2",
+    "typescript": "^3.0.0-dev.20180526",
+    "webpack": "^4.9.1",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "@koa/cors": "2",
+    "koa": "^2.5.1",
+    "preact": "^8.2.9"
+  }
+}
