@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
 import { Component } from 'react';
+import stream from '../stream';
 
 import { Service } from './Service';
 import { IService } from '../types/Service';
@@ -20,27 +21,18 @@ const StyledApp = styled.div`
 
 export class App extends Component<{}, { items: IService[] }> {
 	state = {
-		items: [
-			{
-				key: 1,
-				name: 'car-service',
-				version: 'V3.1',
-				up: true
-			},
-			{
-				key: 2,
-				name: 'home-service',
-				version: 'V2.0',
-				up: false
-			},
-			{
-				key: 3,
-				name: 'some-really-long-service-name-service',
-				version: 'V2.0',
-				up: false
-			}
-		]
+		items: [] as IService[]
 	};
+
+	componentDidMount() {
+		// TODO: See if we can autowire this with Redux or alike
+		stream.observable.subscribe(services =>
+			this.setState({
+				...this.state,
+				items: services
+			})
+		);
+	}
 
 	render() {
 		return (

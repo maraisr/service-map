@@ -1,5 +1,5 @@
 export interface IService {
-	key: number;
+	key: string;
 	name: string;
 	version: string;
 	up: boolean;
