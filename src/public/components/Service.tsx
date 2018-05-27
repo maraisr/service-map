@@ -7,6 +7,7 @@ const ItemStyled = styled.article`
 
 	margin: 5px;
 
+	// TODO: This isnt exactly working
 	width: calc(100% / 5);
 
 	background-color: var(--color-danger);

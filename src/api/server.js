@@ -42,6 +42,22 @@ const testString = [
 		get up() {
 			return Math.random() >= 0.5;
 		}
+	},
+	{
+		key: uuid(),
+		name: 'another-service',
+		version: 'V1.0',
+		get up() {
+			return Math.random() >= 0.5;
+		}
+	},
+	{
+		key: uuid(),
+		name: 'something-else-service',
+		version: 'V1.0',
+		get up() {
+			return Math.random() >= 0.5;
+		}
 	}
 ];
 
