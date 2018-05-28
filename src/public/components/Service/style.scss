@@ -62,8 +62,12 @@
 
 		border-radius: 3px;
 
+		transition: background-color 0.1s linear;
+
 		&:hover {
 			cursor: copy;
+
+			background-color: rgba(white, 0.2);
 		}
 
 		&:not(:last-child) {
