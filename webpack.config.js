@@ -14,7 +14,7 @@ module.exports = {
 	},
 
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js', '.json']
+		extensions: ['.ts', '.tsx', '.js', '.json', '.scss']
 	},
 
 	module: {
@@ -43,7 +43,19 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-				use: ['style-loader', 'css-loader', 'sass-loader']
+				use: [
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							modules: true,
+							camelCase: true,
+							importLoaders: 1,
+							localIdentName: '__[sha512:hash:base64:10]'
+						}
+					},
+					'sass-loader'
+				]
 			}
 		]
 	},

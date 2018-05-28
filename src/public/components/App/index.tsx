@@ -1,23 +1,10 @@
-import styled from 'react-emotion';
 import { Component } from 'react';
-import stream from '../stream';
+import stream from '../../stream';
 
-import { Service } from './Service';
-import { IService } from '../types/Service';
+import { Service } from '../Service';
+import { IService } from '../../types/Service';
 
-const StyledApp = styled.div`
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-
-	padding: 10px;
-
-	margin: -5px;
-
-	background: var(--colour-grey);
-`;
+import style from './style.scss';
 
 export class App extends Component<{}, { items: IService[] }> {
 	state = {
@@ -36,11 +23,11 @@ export class App extends Component<{}, { items: IService[] }> {
 
 	render() {
 		return (
-			<StyledApp>
+			<div className={style.app}>
 				{this.state.items.map(item => (
 					<Service item={item} key={item.key} />
 				))}
-			</StyledApp>
+			</div>
 		);
 	}
 }

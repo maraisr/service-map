@@ -1,0 +1,20 @@
+.service-wrapper {
+    display: inline-block;
+	padding: 25px;
+
+	margin: 5px;
+
+	// TODO: This isnt exactly working
+	width: calc(100% / 5);
+
+	background-color: var(--color-danger);
+
+	border-radius: 3px;
+
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.08),
+		0 1px 3px 1px rgba(0, 0, 0, 0.16);
+
+	&:not(:last-child) {
+		margin-bottom: 10px;
+	}
+}
