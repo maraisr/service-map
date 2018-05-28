@@ -1,13 +1,9 @@
 .app {
-    position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	margin: -6px;
 
-	padding: 10px;
+	display: flex;
+	flex: 1 0 auto;
+	flex-wrap: wrap;
 
-	margin: -5px;
-
-	background: var(--colour-grey);
+	align-items: stretch;
 }

@@ -1,20 +1,81 @@
-.service-wrapper {
-    display: inline-block;
-	padding: 25px;
+%elipseAndStretch {
+	width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
 
-	margin: 5px;
+.service {
+	&__item {
+		$gap: 6px;
+		$count: 5;
 
-	// TODO: This isnt exactly working
-	width: calc(100% / 5);
+		display: inline-block;
+		padding: 25px;
 
-	background-color: var(--color-danger);
+		margin: $gap;
 
-	border-radius: 3px;
+		width: calc((100% / #{$count}) - (#{$gap} * 2));
 
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.08),
-		0 1px 3px 1px rgba(0, 0, 0, 0.16);
+		background-color: var(--colour-light-grey);
 
-	&:not(:last-child) {
-		margin-bottom: 10px;
+		border-radius: 3px;
+
+		transition: background-color 0.5s linear;
+
+		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.08),
+			0 1px 3px 1px rgba(0, 0, 0, 0.16);
+
+		&--up {
+			background-color: var(--color-success);
+		}
+
+		&--down {
+			background-color: var(--color-danger);
+		}
+
+		header {
+			display: flex;
+
+			margin-bottom: 15px;
+
+			h1 {
+				@extend %elipseAndStretch;
+				padding-right: 5px;
+			}
+
+			h1,
+			span {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	&__meta {
+		display: flex;
+		padding: 5px;
+
+		line-height: 1;
+
+		background-color: rgba(black, 0.1);
+
+		border-radius: 3px;
+
+		&:hover {
+			cursor: copy;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 2px;
+		}
+	}
+
+	&__host {
+		@extend %elipseAndStretch;
+		padding-right: 5px;
+	}
+
+	&__status {
 	}
 }

@@ -3,15 +3,40 @@
 
 	box-sizing: border-box;
 
-	--colour-grey: #262626;
+	--colour-grey: #000203;
 	--colour-light-grey: #f2f2f2;
 
-	--color-success: #13e864;
-	--color-danger: #ff225a;
+	--color-success: #5ec929;
+	--color-danger: #d24948;
+}
+
+html {
+	padding: 10px;
+
+	background: var(--colour-grey);
 }
 
 *,
 *:before,
 *:after {
 	box-sizing: inherit;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+h1,
+h2,
+h3 {
+	display: inline-block;
+	vertical-align: middle;
+
+	font-size: inherit;
+
+	padding: 0;
+	margin: 0;
 }

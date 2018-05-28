@@ -13,10 +13,10 @@ export class App extends Component<{}, { items: IService[] }> {
 
 	componentDidMount() {
 		// TODO: See if we can autowire this with Redux or alike
-		stream.observable.subscribe(services =>
+		stream.observable.subscribe(items =>
 			this.setState({
 				...this.state,
-				items: services
+				items
 			})
 		);
 	}
